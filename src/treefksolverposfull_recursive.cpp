@@ -74,7 +74,7 @@ void TreeFkSolverPosFull_recursive::addFrameToMap(const map<string, double>& q_i
     p_out.insert(make_pair(this_segment->first, tf::Stamped<KDL::Frame>(this_frame, ros::Time(), previous_frame.frame_id_)));
 
   // get poses of child segments
-  for (vector<SegmentMap::const_iterator>::const_iterator child=this_segment->second->children.begin(); child !=this_segment->second.children.end(); child++){
+  for (vector<SegmentMap::const_iterator>::const_iterator child=this_segment->second->children.begin(); child !=this_segment->second->children.end(); child++){
     if (flatten_tree)
       addFrameToMap(q_in, p_out, this_frame, *child, flatten_tree);
     else
